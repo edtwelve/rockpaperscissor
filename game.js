@@ -4,34 +4,50 @@ function getComputerChoice () {
     return options[ind];
 }
 
-function playRound(playerSelection,computerSelection) {
+function playRound(playerSelection = "",computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    let resultado;
 
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            return "You Lose! Paper beats Rock";
+            resultado = "You Lose! Paper beats Rock"
+            console.log(resultado);
         } else if (computerSelection === "scissors") {
-            return "You Win! Rock beats Scissors";
+            resultado = "You Win! Rock beats Scissors"
+            console.log(resultado);
         } else {
-            return "TIED";
+            resultado = "TIED";
+            console.log(resultado);
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            return "You lose! Scissors beat Paper";
+            console.log("You lose! Scissors beat Paper");
         } else if (computerSelection === "rock") {
-            return "You Win! Paper beats Rock";
+            console.log("You Win! Paper beats Rock");
         } else {
-            return "TIED";
+            resultado = "TIED";
+            console.log(resultado);
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            return "You lose! Rock beats Scissors";
+            resultado = "You lose! Rock beats Scissors";
+            console.log(resultado);
         } else if (computerSelection === "paper") {
-            return "You Win! Scissors beat Paper";
+            resultado = "You Win! Scissors beat Paper";
+            console.log(resultado);
         } else {
-            return "TIED";
+            resultado = "TIED";
+            console.log(resultado);
         }
+    }
+}
+
+function game () {
+    let usuario = prompt("Paper, scissors, rock?");
+    for (let i = 1; i <=5; i++) {
+        let computerSelection = getComputerChoice();
+        playRound(usuario, computerSelection);
     }
 }
