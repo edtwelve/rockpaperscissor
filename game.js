@@ -4,20 +4,45 @@ function getComputerChoice () {
     return options[ind];
 }
 
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const rock = document.querySelector('#rock');
+
+let usuario;
+
+paper.addEventListener('click', () => {
+    usuario = "paper";
+    /* console.log(usuario); */
+    playRound(usuario, getComputerChoice());
+});
+
+scissors.addEventListener('click', () => {
+    usuario = "scissors";
+    /* console.log(usuario); */
+    playRound(usuario, getComputerChoice());
+});
+
+rock.addEventListener('click', () => {
+    usuario = "rock";
+    /* console.log(usuario); */
+    playRound(usuario, getComputerChoice());
+});
+
+
 function playRound(playerSelection = "",computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    let resultado;
+    let anuncio;
 
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            resultado = "You Lose! Paper beats Rock"
-            console.log(resultado);
+            anuncio = "You Lose! Paper beats Rock"
+            console.log(anuncio);
         } else if (computerSelection === "scissors") {
-            resultado = "You Win! Rock beats Scissors"
-            console.log(resultado);
+            anuncio = "You Win! Rock beats Scissors"
+            console.log(anuncio);
         } else {
-            resultado = "TIED";
-            console.log(resultado);
+            anuncio = "TIED";
+            console.log(anuncio);
         }
     }
     if (playerSelection === "paper") {
@@ -26,28 +51,28 @@ function playRound(playerSelection = "",computerSelection) {
         } else if (computerSelection === "rock") {
             console.log("You Win! Paper beats Rock");
         } else {
-            resultado = "TIED";
-            console.log(resultado);
+            anuncio = "TIED";
+            console.log(anuncio);
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            resultado = "You lose! Rock beats Scissors";
-            console.log(resultado);
+            anuncio = "You lose! Rock beats Scissors";
+            console.log(anuncio);
         } else if (computerSelection === "paper") {
-            resultado = "You Win! Scissors beat Paper";
-            console.log(resultado);
+            anuncio = "You Win! Scissors beat Paper";
+            console.log(anuncio);
         } else {
-            resultado = "TIED";
-            console.log(resultado);
+            anuncio = "TIED";
+            console.log(anuncio);
         }
     }
 }
 
-function game () {
+/* function game () {
     let usuario = prompt("Paper, scissors, rock?");
     for (let i = 1; i <=5; i++) {
         let computerSelection = getComputerChoice();
         playRound(usuario, computerSelection);
     }
-}
+} */
