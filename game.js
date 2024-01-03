@@ -7,9 +7,12 @@ function getComputerChoice () {
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const rock = document.querySelector('#rock');
+const reset = document.querySelector('#reset');
 
 let usuario;
+let defeat = 0, victory = 0, tie = 0;
 
+// Botones
 paper.addEventListener('click', () => {
     usuario = "paper";
     /* console.log(usuario); */
@@ -28,45 +31,82 @@ rock.addEventListener('click', () => {
     playRound(usuario, getComputerChoice());
 });
 
-
 function playRound(playerSelection = "",computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    let anuncio;
+    let anuncio = document.querySelector('#announcement');
+    let victorias = document.querySelector('#victorias');
+    let derrotas = document.querySelector('#derrotas');
+    let empates = document.querySelector('#empates');
+
+    reset.addEventListener('click', () => {
+        defeat = 0, victory = 0, tie = 0;
+        derrotas.textContent = `Defeats: `;
+        victorias.textContent = `Victories: `;
+        empates.textContent = `Ties: `;
+        anuncio.textContent = "RESTARTED";
+        paper.disabled = false;
+        scissors.disabled = false;
+        rock.disabled = false;
+    })
 
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            anuncio = "You Lose! Paper beats Rock"
-            console.log(anuncio);
+            defeat++;
+            anuncio.textContent = "You Lose! Paper beats Rock";
+            derrotas.textContent = `Defeats: ${defeat}`;
         } else if (computerSelection === "scissors") {
-            anuncio = "You Win! Rock beats Scissors"
-            console.log(anuncio);
+            victory++;
+            anuncio.textContent = "You Win! Rock beats Scissors"
+            victorias.textContent = `Victories: ${victory}`;
         } else {
-            anuncio = "TIED";
-            console.log(anuncio);
+            tie++;
+            anuncio.textContent = "TIED";
+            empates.textContent = `Ties: ${tie}`;
         }
     }
+
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            console.log("You lose! Scissors beat Paper");
+            defeat++;
+            anuncio.textContent = "You lose! Scissors beat Paper";
+            derrotas.textContent = `Defeats: ${defeat}`;
         } else if (computerSelection === "rock") {
-            console.log("You Win! Paper beats Rock");
+            victory++;
+            anuncio.textContent = "You Win! Paper beats Rock";
+            victorias.textContent = `Victories: ${victory}`;
         } else {
-            anuncio = "TIED";
-            console.log(anuncio);
+            tie++;
+            anuncio.textContent = "TIED";
+            empates.textContent = `Ties: ${tie}`;
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            anuncio = "You lose! Rock beats Scissors";
-            console.log(anuncio);
+            defeat++;
+            anuncio.textContent = "You lose! Rock beats Scissors";
+            derrotas.textContent = `Defeats: ${defeat}`;
         } else if (computerSelection === "paper") {
-            anuncio = "You Win! Scissors beat Paper";
-            console.log(anuncio);
+            victory++;
+            anuncio.textContent = "You Win! Scissors beat Paper";
+            victorias.textContent = `Victories: ${victory}`;
         } else {
-            anuncio = "TIED";
-            console.log(anuncio);
+            tie++;
+            anuncio.textContent = "TIED";
+            empates.textContent = `Ties: ${tie}`;
         }
     }
+
+    if (defeat === 5) {
+        anuncio.textContent = "You lose!";
+        paper.disabled = true;
+        scissors.disabled = true;
+        rock.disabled = true;
+    } else if (victory === 5) {
+        paper.disabled = true;
+        scissors.disabled = true;
+        rock.disabled = true;
+    }
+
 }
 
 /* function game () {
