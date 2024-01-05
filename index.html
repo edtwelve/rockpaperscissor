@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paper, Scissors, Rock</title>
     <script src="game.js" defer></script>
+    <script src="https://kit.fontawesome.com/1046d94a43.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="desktop.css"
+    media="(min-width:1200px) and (max-width:1919px)"/>
 </head>
 <body>
     <main class="container">
         <section class="botonesContainer">
             <section id="gamebtns" >
-                <button id="paper">Paper</button>
-                <button id="scissors">Scissors</button>
-                <button id="rock">Rock</button>
+                <button class="fuente" id="paper">Paper</button>
+                <button class="fuente" id="scissors">Scissors</button>
+                <button class="fuente" id="rock">Rock</button>
             </section>
 
-            <button id="reset">Reset</button>
+            <section class="reload">
+                <button id="reset">Reset</button>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </section>
         </section>
 
         <section class="resultadoContainer">
