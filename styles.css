@@ -33,20 +33,15 @@
 }
 
 #reset {
-    /* margin-top: 1rem; */
-    font-size: 1rem;
+    margin-top: 1rem;
     background-color: inherit;
-    border: none;
-    margin: 0;
+    /* border: none; */
+    /* margin: 0; padding: 0; */
 }
 
 .fa-arrows-rotate {
     text-align: center;
-    padding: 0 14px;
-}
-
-.reload:hover .fa-arrows-rotate{
-    animation: rotate 1s linear infinite;
+    margin-left: 1rem;
 }
 
 @keyframes rotate {
@@ -57,10 +52,6 @@
     to {
         transform: rotate(360deg);
     }
-}
-
-.reload {
-    background-color: #fff;
 }
 
 .announcement {
