@@ -30,3 +30,33 @@
 #reset {
     margin-top: 2rem;
 }
+
+#announcement {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.resultados {
+    background-color: cadetblue;
+    text-align: center;
+}
+
+
+
+/* Estilos del conteo */
+
+.conteo {
+    font-size: 2rem;
+}
+
+#victorias {
+    color: green;
+}
+
+#derrotas {
+    color: red;
+}
+
+#empates {
+    color: grey;
+}
