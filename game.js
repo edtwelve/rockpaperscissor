@@ -68,7 +68,7 @@ function playRound(playerSelection = "",computerSelection) {
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
             defeat++;
-            anuncio.textContent = "You lose! Scissors beat Paper";
+            anuncio.textContent = "You Lose! Scissors beat Paper";
             derrotas.textContent = `${defeat}`;
         } else if (computerSelection === "rock") {
             victory++;
@@ -80,10 +80,11 @@ function playRound(playerSelection = "",computerSelection) {
             empates.textContent = `${tie}`;
         }
     }
+
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
             defeat++;
-            anuncio.textContent = "You lose! Rock beats Scissors";
+            anuncio.textContent = "You Lose! Rock beats Scissors";
             derrotas.textContent = `${defeat}`;
         } else if (computerSelection === "paper") {
             victory++;
@@ -97,11 +98,12 @@ function playRound(playerSelection = "",computerSelection) {
     }
 
     if (defeat === 5) {
-        anuncio.textContent = "You lose!";
+        anuncio.textContent = "You Lose!";
         paper.disabled = true;
         scissors.disabled = true;
         rock.disabled = true;
     } else if (victory === 5) {
+        anuncio.textContent = "You Win!";
         paper.disabled = true;
         scissors.disabled = true;
         rock.disabled = true;
