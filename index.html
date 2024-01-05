@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paper, Scissors, Rock</title>
     <script src="game.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="botonesContainer">
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-        <button id="rock">Rock</button>
-        <button id="reset">Reset</button>
-    </section>
+    <main class="container">
+        <section class="botonesContainer">
+            <section id="gamebtns">
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+                <button id="rock">Rock</button>
+            </section>
 
-    <section class="resultadoContainer">
-        <p id="announcement"></p>
-        <section id="victory">
-            <p id="victorias">Victories</p>
+            <button id="reset">Reset</button>
         </section>
-        <section id="defeat">
-            <p id="derrotas">Defeats</p>
+
+        <section class="resultadoContainer">
+            <p id="announcement"></p>
+            <section id="victory">
+                <p id="victorias">Victories</p>
+            </section>
+            <section id="defeat">
+                <p id="derrotas">Defeats</p>
+            </section>
+            <section id="tie">
+                <p id="empates">Ties</p>
+            </section>
         </section>
-        <section id="tie">
-            <p id="empates">Ties</p>
-        </section>
-    </section>
+    </main>
 </body>
 </html>
