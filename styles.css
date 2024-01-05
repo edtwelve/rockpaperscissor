@@ -25,28 +25,35 @@
 
 #gamebtns {
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
 }
+
+#gamebtns button {
+    min-width: 80%;
+}
+
 #reset {
     margin-top: 2rem;
 }
 
-#announcement {
+.announcement {
     text-align: center;
     padding: 1rem 0;
 }
 
 .resultados {
-    background-color: cadetblue;
-    text-align: center;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-
 /* Estilos del conteo */
-
-.conteo {
-    font-size: 2rem;
+.fuente {
+    font-size: 1.5rem;
 }
 
 #victorias {
@@ -59,4 +66,13 @@
 
 #empates {
     color: grey;
+}
+
+/* Estilos del resultado */
+#victory, #defeat, #tie {
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
 }
