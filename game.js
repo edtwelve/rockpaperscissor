@@ -40,9 +40,9 @@ function playRound(playerSelection = "",computerSelection) {
 
     reset.addEventListener('click', () => {
         defeat = 0, victory = 0, tie = 0;
-        derrotas.textContent = `Defeats: `;
-        victorias.textContent = `Victories: `;
-        empates.textContent = `Ties: `;
+        victorias.textContent = ``;
+        derrotas.textContent = ``;
+        empates.textContent = ``;
         anuncio.textContent = "RESTARTED";
         paper.disabled = false;
         scissors.disabled = false;
@@ -53,15 +53,15 @@ function playRound(playerSelection = "",computerSelection) {
         if (computerSelection === "paper") {
             defeat++;
             anuncio.textContent = "You Lose! Paper beats Rock";
-            derrotas.textContent = `Defeats: ${defeat}`;
+            derrotas.textContent = `${defeat}`;
         } else if (computerSelection === "scissors") {
             victory++;
             anuncio.textContent = "You Win! Rock beats Scissors"
-            victorias.textContent = `Victories: ${victory}`;
+            victorias.textContent = `${victory}`;
         } else {
             tie++;
             anuncio.textContent = "TIED";
-            empates.textContent = `Ties: ${tie}`;
+            empates.textContent = `${tie}`;
         }
     }
 
@@ -69,30 +69,30 @@ function playRound(playerSelection = "",computerSelection) {
         if (computerSelection === "scissors") {
             defeat++;
             anuncio.textContent = "You lose! Scissors beat Paper";
-            derrotas.textContent = `Defeats: ${defeat}`;
+            derrotas.textContent = `${defeat}`;
         } else if (computerSelection === "rock") {
             victory++;
             anuncio.textContent = "You Win! Paper beats Rock";
-            victorias.textContent = `Victories: ${victory}`;
+            victorias.textContent = `${victory}`;
         } else {
             tie++;
             anuncio.textContent = "TIED";
-            empates.textContent = `Ties: ${tie}`;
+            empates.textContent = `${tie}`;
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
             defeat++;
             anuncio.textContent = "You lose! Rock beats Scissors";
-            derrotas.textContent = `Defeats: ${defeat}`;
+            derrotas.textContent = `${defeat}`;
         } else if (computerSelection === "paper") {
             victory++;
             anuncio.textContent = "You Win! Scissors beat Paper";
-            victorias.textContent = `Victories: ${victory}`;
+            victorias.textContent = `${victory}`;
         } else {
             tie++;
             anuncio.textContent = "TIED";
-            empates.textContent = `Ties: ${tie}`;
+            empates.textContent = `${tie}`;
         }
     }
 
