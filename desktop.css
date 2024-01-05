@@ -1,7 +1,30 @@
+#gamebtns {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#gamebtns button {
+    min-width: 30%;
+    padding: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gamebtns .fuente :nth-child(2) {
+    position: relative;
+    right: 0;
+    font-size: 3rem;
+}
+
 #gamebtns button:hover {
     transform: scale(1.1);
 }
 
+.fuente {
+    font-size: 2rem;
+}
 .fuente:hover .fa-arrows-rotate {
     animation: rotate 1s linear infinite;
 }
