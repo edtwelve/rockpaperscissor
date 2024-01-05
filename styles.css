@@ -1,14 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #2E4172;
+}
+
 .botonesContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aquamarine;
 }
 
 .botonesContainer button {
@@ -57,6 +66,7 @@
 .announcement {
     text-align: center;
     padding: 1rem 0;
+    color: #87CEFA;
 }
 
 .resultados {
@@ -64,16 +74,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 
 /* Estilos del conteo */
 .fuente {
     font-size: 1.5rem;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+#gamebtns .fuente :nth-child(2) {
+    position: absolute;
+    right: 4.5rem;
 }
 
 #victorias {
-    color: green;
+    color: rgb(30, 220, 9);
 }
 
 #derrotas {
