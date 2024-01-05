@@ -33,7 +33,7 @@ rock.addEventListener('click', () => {
 
 function playRound(playerSelection = "",computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    let anuncio = document.querySelector('#announcement');
+    let anuncio = document.querySelector('.announcement');
     let victorias = document.querySelector('#victorias');
     let derrotas = document.querySelector('#derrotas');
     let empates = document.querySelector('#empates');
